@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(143, 243, 228);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#canvDiv {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
