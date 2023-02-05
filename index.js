@@ -28,7 +28,7 @@ collisionMap.forEach((row, i) => {
 })
 
 const image = new Image();
-image.src = 'assets/jogoMap400.png'
+image.src = 'assets/jogoMap.png'
 
 const playerDownImg = new Image();
 playerDownImg.src = 'assets/playerDown.png';
