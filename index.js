@@ -33,6 +33,18 @@ image.src = 'assets/jogoMap.png'
 const playerDownImg = new Image();
 playerDownImg.src = 'assets/playerDown.png';
 
+const playerUpImg = new Image();
+playerUpImg.src = 'assets/playerUp.png';
+
+const playerLeftImg = new Image();
+playerLeftImg.src = 'assets/playerLeft.png';
+
+const playerRightImg = new Image();
+playerRightImg.src = 'assets/playerRight.png';
+
+const foregroundImg = new Image();
+foregroundImg.src = 'assets/foregroundMap.png'
+
 const player = new Sprite({
     position: {
         x: canvas.width / 2 - playerDownImg.width / 4,
@@ -41,6 +53,12 @@ const player = new Sprite({
     image: playerDownImg,
     frames: {
         max: 4
+    },
+    sprites: {
+        up: playerUpImg,
+        down: playerDownImg,
+        left: playerLeftImg,
+        right: playerRightImg,
     }
 })
 
@@ -50,6 +68,14 @@ const background = new Sprite({
         y: offset.y
     },
     image: image
+})
+
+const foreground = new Sprite({
+    position: {
+        x: offset.x,
+        y: offset.y
+    },
+    image: foregroundImg
 })
 
 const keys = {
@@ -67,7 +93,7 @@ const keys = {
     },
 }
 
-const movables = [background, ...boundaries]
+const movables = [background, ...boundaries, foreground]
 
 function collision({rect1, rect2}) {
     return (rect1.position.x + rect1.width >= rect2.position.x &&
@@ -84,9 +110,13 @@ function animate() {
         boundary.draw()
     })
     player.draw()
+    foreground.draw();
 
     let moving = true;
+    player.moving = false;
         if(keys.arrowUp.pressed && lastKey === 'ArrowUp') {
+            player.moving = true
+            player.image = player.sprites.up
             for(let i = 0; i < boundaries.length; i++) {
                 const boundary = boundaries[i]
                 if(
@@ -106,6 +136,8 @@ function animate() {
             movables.forEach((movable) => {movable.position.y += 3})
         }
         else if(keys.arrowDown.pressed && lastKey === 'ArrowDown') {
+            player.moving = true
+            player.image = player.sprites.down
             for(let i = 0; i < boundaries.length; i++) {
                 const boundary = boundaries[i]
                 if(
@@ -125,6 +157,8 @@ function animate() {
             movables.forEach((movable) => {movable.position.y -= 3})
         }
         else if(keys.arrowRight.pressed && lastKey === 'ArrowRight') {
+            player.moving = true
+            player.image = player.sprites.right
             for(let i = 0; i < boundaries.length; i++) {
                 const boundary = boundaries[i]
                 if(
@@ -144,6 +178,8 @@ function animate() {
             movables.forEach((movable) => {movable.position.x -= 3})
         }
         else if(keys.arrowLeft.pressed && lastKey === 'ArrowLeft') {
+            player.moving = true
+            player.image = player.sprites.left
             for(let i = 0; i < boundaries.length; i++) {
                 const boundary = boundaries[i]
                 if(
