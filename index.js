@@ -3,7 +3,7 @@ const c = canvas.getContext('2d');
 
 canvas.width = 1024;
 canvas.height = 576;
-
+song.play();
 const collisionMap = [];
 for(let i = 0; i < collisions.length; i += 70) {
     collisionMap.push(collisions.slice(i, 70 + i))
@@ -28,22 +28,22 @@ collisionMap.forEach((row, i) => {
 })
 
 const image = new Image();
-image.src = 'assets/jogoMap.png'
+image.src = 'assets/images/jogoMap.png'
 
 const playerDownImg = new Image();
-playerDownImg.src = 'assets/playerDown.png';
+playerDownImg.src = 'assets/images/playerDown.png';
 
 const playerUpImg = new Image();
-playerUpImg.src = 'assets/playerUp.png';
+playerUpImg.src = 'assets/images/playerUp.png';
 
 const playerLeftImg = new Image();
-playerLeftImg.src = 'assets/playerLeft.png';
+playerLeftImg.src = 'assets/images/playerLeft.png';
 
 const playerRightImg = new Image();
-playerRightImg.src = 'assets/playerRight.png';
+playerRightImg.src = 'assets/images/playerRight.png';
 
 const foregroundImg = new Image();
-foregroundImg.src = 'assets/foregroundMap.png'
+foregroundImg.src = 'assets/images/foregroundMap.png'
 
 const player = new Sprite({
     position: {
