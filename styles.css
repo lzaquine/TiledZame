@@ -20,6 +20,10 @@
 	align-content: center;
 }
 
+#canvas {
+	border-radius: 25px;
+}
+
 @media only screen and (max-width: 900px) {
 	#zame {
 		margin: -10px;
