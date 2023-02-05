@@ -3,7 +3,7 @@ const c = canvas.getContext('2d');
 
 canvas.width = 1024;
 canvas.height = 576;
-song.play();
+
 const collisionMap = [];
 for(let i = 0; i < collisions.length; i += 70) {
     collisionMap.push(collisions.slice(i, 70 + i))
@@ -247,4 +247,14 @@ window.addEventListener('keyup', (e) => {
         keys.arrowRight.pressed = false;
         break
     }
+})
+
+const myCanvas = document.getElementById('canvas')
+
+myCanvas.addEventListener('touchstart', () => {
+    song.play();
+})
+
+addEventListener('click', () => {
+    song.play();
 })
