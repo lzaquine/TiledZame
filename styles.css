@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    background-color: rgb(143, 243, 228);
+	font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(104, 225, 207);
     overflow-x: hidden;
     overflow-y: hidden;
+}
+#zame {
+	margin: 35px;
 }
 #canvDiv {
 	display: flex;
@@ -13,3 +19,9 @@
 	align-items: center;
 	align-content: center;
 }
+
+@media only screen and (max-width: 900px) {
+	#zame {
+		margin: -10px;
+	}
+  }
