@@ -31,16 +31,16 @@ const image = new Image();
 image.src = 'assets/images/jogoMap.png'
 
 const playerDownImg = new Image();
-playerDownImg.src = 'assets/images/playerDown.png';
+playerDownImg.src = 'assets/images/pokedown.png';
 
 const playerUpImg = new Image();
-playerUpImg.src = 'assets/images/playerUp.png';
+playerUpImg.src = 'assets/images/pokeup.png';
 
 const playerLeftImg = new Image();
-playerLeftImg.src = 'assets/images/playerLeft.png';
+playerLeftImg.src = 'assets/images/pokeleft.png';
 
 const playerRightImg = new Image();
-playerRightImg.src = 'assets/images/playerRight.png';
+playerRightImg.src = 'assets/images/pokeright.png';
 
 const foregroundImg = new Image();
 foregroundImg.src = 'assets/images/foregroundMap.png'
